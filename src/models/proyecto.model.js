@@ -1,15 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ProyectoSchema = new mongoose.Schema({
     nombre: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
     },
     descripcion: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
     },
     fechaInicio: {
         type: Date,
@@ -20,20 +20,24 @@ const ProyectoSchema = new mongoose.Schema({
     tecnologias: {
         type: [String],
         required: true,
-        trim: true
+        trim: true,
     },
-    imagen: {
+    imagenDesktop: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+    },
+    imagenResponsive: {
+        type: String,
+        trim: true,
     },
     url: {
         type: String,
         required: true,
-        trim: true
-    }
+        trim: true,
+    },
 });
 
-const Proyecto = mongoose.model('Proyecto', ProyectoSchema);
+const Proyecto = mongoose.model("Proyecto", ProyectoSchema);
 
 module.exports = Proyecto;
