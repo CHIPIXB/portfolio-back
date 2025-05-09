@@ -2,7 +2,7 @@ const Contacto = require("../models/contacto.model.js");
 
 const getContacto = async (req, res) => {
     try {
-        const contacto = await Contacto.find();
+        const contacto = await Contacto.findOne();
         res.status(200).json(contacto);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -35,8 +35,23 @@ const updateContacto = async (req, res) => {
     }
 };
 
+const deleteContacto = async (req, res) => {
+    try {
+        const contactoEliminado = await Contacto.findByIdAndDelete(
+            req.params.id,
+        );
+        if (!contactoEliminado) {
+            return res.status(404).json({ message: "Contacto no encontrado" });
+        }
+        res.status(200).json({ message: "Contacto eliminado" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 module.exports = {
     getContacto,
     addContacto,
     updateContacto,
+    deleteContacto,
 };
