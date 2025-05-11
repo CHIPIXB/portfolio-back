@@ -27,10 +27,6 @@ const ProyectoSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    imagenResponsive: {
-        type: String,
-        trim: true,
-    },
     url: {
         type: String,
         required: true,

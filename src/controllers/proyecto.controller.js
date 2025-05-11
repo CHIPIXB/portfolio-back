@@ -17,7 +17,6 @@ const addProyecto = async (req, res) => {
         fechaFin,
         tecnologias,
         imagenDesktop,
-        imagenResponsive,
         url,
     } = req.body;
 
@@ -28,7 +27,6 @@ const addProyecto = async (req, res) => {
         fechaFin,
         tecnologias,
         imagenDesktop,
-        imagenResponsive,
         url,
     });
 
@@ -49,7 +47,6 @@ const updateProyecto = async (req, res) => {
         fechaFin,
         tecnologias,
         imagenDesktop,
-        imagenResponsive,
         url,
     } = req.body;
 
@@ -63,7 +60,6 @@ const updateProyecto = async (req, res) => {
                 fechaFin,
                 tecnologias,
                 imagenDesktop,
-                imagenResponsive,
                 url,
             },
             { new: true },
